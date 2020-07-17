@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.min.css">
+    <title>Dashboard |Spin&Win</title>
+    <style>
+   /*
+Description:
+    Contains all the styles for the winning wheel page.
+    
+Verison History:
+    2012-01-28, Douglas McKechie
+    - Created based off earlier version.
+    
+    2015-09-26, Douglas McKechie
+    - Minor updates for the 2.0 winwheel example.
+*/
+
+body
+{
+    font-family: arial;
+}
+
+/* Sets the background image for the wheel */
+td.the_wheel
+{
+    background-image: url('images/wheel_back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* Do some css reset on selected elements */
+h1, p
+{
+    margin: 0;
+}
+
+div.power_controls
+{
+    margin-right:70px;
+}
+
+div.html5_logo
+{
+    margin-left:70px;
+}
+
+/* Styles for the power selection controls */
+table.power
+{
+    background-color: #cccccc;
+    cursor: pointer;
+    border:1px solid #333333;
+}
+
+table.power th
+{
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1
+{
+    background-color: #6fe8f0;
+}
+
+td.pw2
+{
+    background-color: #86ef6f;
+}
+
+td.pw3
+{
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable
+{
+    cursor: pointer;
+}
+
+/* Other misc styles */
+.margin_bottom
+{
+    margin-bottom: 5px;
+}
+    </style>
+</head>
+
+<body class="fixed-sn white-skin">
+
+    <!-- Sidebar navigation -->
+    <div id="slide-out" class="side-nav fixed" style="background-color: #9fa4c4;
+    background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);
+    ">
+    <ul class="custom-scrollbar">
+        <li>
+            <h1 class="font-weight-bold">
+            <a href="#" class="indigo-text text-center">EARNSMART</a>
+            </h1>
+        </li>
+        <hr/>
+        <!-- Side navigation links -->
+        <li>
+        <ul class="collapsible collapsible-accordion">
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> MAIN<i
+                class="fas fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul class="list-unstyled">
+                <li><a href="index.html" class="waves-effect">Dashboard</a>
+                </li>
+                </ul>
+            </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-hand-pointer"></i> ANALYTICS<i
+                class="fas fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul class="list-unstyled">
+                <li><a href="depositNow.html" class="waves-effect">Deposit Now</a>
+                </li>
+                <li><a href="depositHistory.html" class="waves-effect">Deposit History</a>
+                </li>
+                <li><a href="earnings.html" class="waves-effect">Earnings</a>
+                </li>
+                <li><a href="payments.html" class="waves-effect">Payments</a>
+                </li>
+                </ul>
+            </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> PRODUCTS<i class="fas fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul class="list-unstyled">
+                <li><a href="ebooks.html" class="waves-effect">Ebooks</a>
+                </li>
+                <li><a href="spin.html" class="waves-effect">Spin&Win</a>
+                </li>
+                <li><a href="newUserSpin.html" class="waves-effect">NewuserSpin</a>
+                </li>
+                <li><a href="freeSpin.html" class="waves-effect">FreeSpin</a>
+                </li>
+                <li><a href="#" class="waves-effect">Surveys</a>
+                </li>
+                </ul>
+            </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="far fa-envelope"></i> SUPPORT<i class="fas fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+                <ul class="list-unstyled">
+                <li><a href="notifications.html" class="waves-effect">Notifications</a>
+                </li>
+                <li><a href="contact.html" class="waves-effect">Contact Us</a>
+                </li>
+                </ul>
+            </div>
+            </li>
+        </ul>
+        </li>
+        <!--/. Side navigation links -->
+    </ul>
+    <div class="sidenav-bg mask-strong"></div>
+    </div>
+    <!--/. Sidebar navigation -->
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+    <!-- SideNav slide-out button -->
+    <div class="float-left">
+        <a href="#" data-activates="slide-out" class="button-collapse black-text"><i class="fas fa-bars"></i></a>
+    </div>
+    <!-- Breadcrumb-->
+    <div class="breadcrumb-dn mr-auto">
+        <p class="font-weight-bold">Dashboard</p>
+    </div>
+    <ul class="nav navbar-nav nav-flex-icons ml-auto">
+        <li class="nav-item">
+        <a class="nav-link"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Notifications</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><i class="fas fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            More
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Logout</a>
+        </div>
+        </li>
+    </ul>
+    </nav>
+    <!-- /.Navbar -->
+<!--/.Double navigation-->
+
+<main>
+
+<div class="jumbotron" style="background-color: #b3cdd1;
+background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
+">
+    <div class="container mb-5">
+        <h1>Deposit Now!</h1>
+        <p class="text-muted">Continue making money with earn smart.</p>
+    </div>
+</div>
+<br/>
+
+<div class="container mb-3">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body bg-secondary">
+                    <span class="float-left">
+                    <h4>Balance</h4>
+                    <p class="text-white-50">Current User Balance</p>
+                    </span>
+                    <span class="float-right h4 text-white">Ksh 20</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="text-center">INSTRUCTIONS</h5>
+                    <hr>
+                    <p class="text-center text-warning">Minimum amount is Ksh 20</p>
+                    <hr>
+                    <p class="text-center text-danger">Do not reload page while spinning(you will loose your stake)</p>
+                    <hr>
+                    <p class="lead h4 text-success"> Enter Amount (Minimum Ksh20)</p>
+                    <form>
+                        <div class="form-row">
+                          <div class="form-group ">
+                            <input type="text" class="form-control" id="number" placeholder="Enter Amount">
+                          </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Place Amount</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div align="center">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td>
+                            <div class="power_controls">
+                                <br />
+                                <br />
+                                <table class="power" cellpadding="10" cellspacing="0">
+                                    <tr>
+                                        <th align="center">Power</th>
+                                    </tr>
+                                    <tr>
+                                        <td width="78" align="center" id="pw3" onClick="powerSelected(3);">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" id="pw2" onClick="powerSelected(2);">Med</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" id="pw1" onClick="powerSelected(1);">Low</td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <img id="spin_button" src="images/spin_off.png" alt="Spin" onClick="startSpin();" />
+                                <br /><br />
+                                &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
+                            </div>
+                        </td>
+                        <td width="438" height="582" class="the_wheel" align="center" valign="center">
+                            <canvas id="canvas" width="434" height="434">
+                                <p style="color: white;" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                            </canvas>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+<br>
+<br>
+<br>
+<!--Footer-->
+<footer class="page-footer text-center text-md-left">
+    <div class="footer-copyright py-3 text-center">
+        <div class="container-fluid">
+            © 2020 Design by: Jan-Tech
+        </div>
+    </div>
+</footer>
+<!--/.Footer-->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/Winwheel.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script>
+        // Create new wheel object specifying the parameters at creation time.
+        let theWheel = new Winwheel({
+            'numSegments'   : 16,   // Specify number of segments.
+            'outerRadius'   : 212,  // Set radius to so wheel fits the background.
+            'innerRadius'   : 120,  // Set inner radius to make wheel hollow.
+            'textFontSize'  : 16,   // Set font size accordingly.
+            'textMargin'    : 0,    // Take out default margin.
+            'segments'      :       // Define segments including colour and text.
+            [
+               {'fillStyle' : '#eae56f', 'text' : 'Ksh 500'},
+               {'fillStyle' : '#89f26e', 'text' : 'Ksh 250'},
+               {'fillStyle' : '#7de6ef', 'text' : 'Ksh 10'},
+               {'fillStyle' : '#e7706f', 'text' : 'Ksh 300'},
+               {'fillStyle' : '#eae56f', 'text' : 'Ksh 0'},
+               {'fillStyle' : '#89f26e', 'text' : 'Ksh 100'},
+               {'fillStyle' : '#7de6ef', 'text' : 'Ksh 50'},
+               {'fillStyle' : '#e7706f', 'text' : 'Ksh 500'},
+               {'fillStyle' : '#eae56f', 'text' : 'Ksh 20'},
+               {'fillStyle' : '#89f26e', 'text' : 'Ksh 200'},
+               {'fillStyle' : '#7de6ef', 'text' : 'Ksh 100'},
+               {'fillStyle' : '#e7706f', 'text' : 'Ksh 40'},
+               {'fillStyle' : '#eae56f', 'text' : 'Ksh 50'},
+               {'fillStyle' : '#89f26e', 'text' : 'Ksh 10'},
+               {'fillStyle' : '#7de6ef', 'text' : 'Ksh 30'},
+               {'fillStyle' : '#e7706f', 'text' : 'Ksh 400'}
+            ],
+            'animation' :           // Define spin to stop animation.
+            {
+                'type'     : 'spinToStop',
+                'duration' : 5,
+                'spins'    : 8,
+                'callbackFinished' : alertPrize
+            }
+        });
+
+        // Vars used by the code in this page to do power controls.
+        let wheelPower    = 0;
+        let wheelSpinning = false;
+
+        // -------------------------------------------------------
+        // Function to handle the onClick on the power buttons.
+        // -------------------------------------------------------
+        function powerSelected(powerLevel)
+        {
+            // Ensure that power can't be changed while wheel is spinning.
+            if (wheelSpinning == false) {
+                // Reset all to grey incase this is not the first time the user has selected the power.
+                document.getElementById('pw1').className = "";
+                document.getElementById('pw2').className = "";
+                document.getElementById('pw3').className = "";
+
+                // Now light up all cells below-and-including the one selected by changing the class.
+                if (powerLevel >= 1) {
+                    document.getElementById('pw1').className = "pw1";
+                }
+
+                if (powerLevel >= 2) {
+                    document.getElementById('pw2').className = "pw2";
+                }
+
+                if (powerLevel >= 3) {
+                    document.getElementById('pw3').className = "pw3";
+                }
+
+                // Set wheelPower var used when spin button is clicked.
+                wheelPower = powerLevel;
+
+                // Light up the spin button by changing it's source image and adding a clickable class to it.
+                document.getElementById('spin_button').src = "images/spin_on.png";
+                document.getElementById('spin_button').className = "clickable";
+            }
+        }
+
+        // -------------------------------------------------------
+        // Click handler for spin button.
+        // -------------------------------------------------------
+        function startSpin()
+        {
+            // Ensure that spinning can't be clicked again while already running.
+            if (wheelSpinning == false) {
+                // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+                // to rotate with the duration of the animation the quicker the wheel spins.
+                if (wheelPower == 1) {
+                    theWheel.animation.spins = 3;
+                } else if (wheelPower == 2) {
+                    theWheel.animation.spins = 8;
+                } else if (wheelPower == 3) {
+                    theWheel.animation.spins = 15;
+                }
+
+                // Disable the spin button so can't click again while wheel is spinning.
+                document.getElementById('spin_button').src       = "images/spin_off.png";
+                document.getElementById('spin_button').className = "";
+
+                // Begin the spin animation by calling startAnimation on the wheel object.
+                theWheel.startAnimation();
+
+                // Set to true so that power can't be changed and spin button re-enabled during
+                // the current animation. The user will have to reset before spinning again.
+                wheelSpinning = true;
+            }
+        }
+
+        // -------------------------------------------------------
+        // Function for reset button.
+        // -------------------------------------------------------
+        function resetWheel()
+        {
+            theWheel.stopAnimation(false);  // Stop the animation, false as param so does not call callback function.
+            theWheel.rotationAngle = 0;     // Re-set the wheel angle to 0 degrees.
+            theWheel.draw();                // Call draw to render changes to the wheel.
+
+            document.getElementById('pw1').className = "";  // Remove all colours from the power level indicators.
+            document.getElementById('pw2').className = "";
+            document.getElementById('pw3').className = "";
+
+            wheelSpinning = false;          // Reset to false to power buttons and spin can be clicked again.
+        }
+
+        // -------------------------------------------------------
+        // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+        // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
+        // -------------------------------------------------------
+        function alertPrize(indicatedSegment)
+        {
+            // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+            alert("You have won " + indicatedSegment.text);
+        }
+    </script>
+</body>
+</html>
