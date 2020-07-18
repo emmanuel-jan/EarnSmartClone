@@ -110,7 +110,7 @@
             
                 <!--Grid column-->
                 <div class="col-md-9 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" action="#" method="POST">
+                    <form id="contact_form" onsubmit="return false" autocomplete="off">
             
                         <!--Grid row-->
                         <div class="row">
@@ -118,8 +118,9 @@
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="name" name="name" class="form-control">
-                                    <label for="name" class="">Your name</label>
+                                    <input type="text" id="contact_name" class="form-control">
+                                    <label class="">Your name</label>
+                                    <small id="contact_name_error" class="form-text text-muted"></small>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -127,8 +128,9 @@
                             <!--Grid column-->
                             <div class="col-md-6">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="email" name="email" class="form-control">
-                                    <label for="email" class="">Your email</label>
+                                    <input type="text" id="contact_email" class="form-control">
+                                    <label class="">Your email</label>
+                                    <small id="contact_email_error" class="form-text text-muted"></small>
                                 </div>
                             </div>
                             <!--Grid column-->
@@ -140,8 +142,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
-                                    <input type="text" id="subject" name="subject" class="form-control">
-                                    <label for="subject" class="">Subject</label>
+                                    <input type="text" id="contact_subject" class="form-control">
+                                    <label class="">Subject</label>
+                                    <small id="contact_subject_error" class="form-text text-muted"></small>
                                 </div>
                             </div>
                         </div>
@@ -154,20 +157,18 @@
                             <div class="col-md-12">
             
                                 <div class="md-form">
-                                    <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                                    <label for="message">Your message</label>
+                                    <textarea type="text" id="contact_message" rows="2" class="form-control md-textarea"></textarea>
+                                    <label>Your message</label>
+                                    <small id="contact_message_error" class="form-text text-muted"></small>
                                 </div>
             
                             </div>
                         </div>
                         <!--Grid row-->
-            
+                        <div class="text-center text-md-left">
+                          <button type="submit" class="btn btn-primary">Send</button>
+                          </div>
                     </form>
-            
-                    <div class="text-center text-md-left">
-                    <a class="btn btn-primary">Send</a>
-                    </div>
-                    <div class="status" id="status"></div>
                 </div>
                 <!--Grid column-->
             
@@ -207,6 +208,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/all.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/validation.js"></script>
     <script src="js/mdb.min.js"></script>
     <script src="js/main.js"></script>
 </body>

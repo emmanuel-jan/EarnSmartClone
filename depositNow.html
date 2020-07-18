@@ -132,17 +132,19 @@ background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
 <br/>
 <div class="container mb-5">
     <p class="h5 text-success text-center">MPESA DEPOSIT</p>
-    <form align="center">
+    <form align="center" id="mpesa-form" onsubmit="return false" autocomplete="off">
         <div class="form-row">
           <div class="form-group col-md-6 offset-md-3">
             <label>Phone</label>
-            <input type="text" class="form-control" id="number" placeholder="Enter Phone Number">
+            <input type="text" class="form-control" id="number" placeholder="07 00000000">
+            <small id="phonenumber_error" class="form-text text-muted"></small>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-6 offset-md-3">
             <label>Amount</label>
             <input type="text" class="form-control" id="amount" placeholder="Enter Amount">
+            <small id="amount_error" class="form-text text-muted"></small>
           </div>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
@@ -166,6 +168,7 @@ background-image: linear-gradient(315deg, #b3cdd1 0%, #9fa4c4 74%);
     <script src="js/jquery.min.js"></script>
     <script src="js/all.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/validation.js"></script>
     <script src="js/mdb.min.js"></script>
     <script src="js/main.js"></script>
 </body>
