@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
-    <title>Dashboard |login</title>
+    <title>Earnsmart |Make Payment</title>
 </head>
 
 <body style="background: lightgray;">
@@ -17,24 +17,19 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3 rounded text-white-50" style="background-color: #9fa4c4;
                 background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);">
-                    <p class="h3 text-center mb-3 mt-5">Welcome Back :)</p>
-                    <p class="mb-1 text-center"><b>Whatsapp us or Call us:</b></p>
-                    <p class="text-center"><b>0703032903</b></p>
-                    <form class="ml-2 mr-2" id="login_form" onsubmit="return false" autocomplete="off">
+                    <p class="h3 text-center mb-3 mt-5">Make Payment</p>
+                    <form class="ml-2 mr-2" id="makePayment_form">
                         <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" class="form-control" id="login_username" placeholder="Enter Username">
-                        <small id="login_username_error" class="form-text text-muted"></small>
+                        <label>Your Mobile</label>
+                        <input type="number" class="form-control" id="makePayment_Mobile" value="0700400459" disabled>
                         </div>
                         <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" id="login_password" placeholder="Enter Password">
-                        <small id="login_password_error" class="form-text text-muted"></small>
+                        <label>Amount</label>
+                        <input type="number" class="form-control" id="paymentAmount" value="500" disabled>
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary">Pay Now</button>
                     </form>
-                    <p class="text-center text-white-50">Don't have an account? <span class="text-primary"><a href="signUp.html">Register now</a></span></p>
-                    <p class="text-center"><a href="#">Forgot Password</a></p>
+                    <p class="text-center text-warning">You will receive an mpesa pop up, <br> enter your PIN to complete payment.</p>
                 </div>
             </div>
         </div>
