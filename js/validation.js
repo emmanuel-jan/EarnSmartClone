@@ -278,4 +278,19 @@ $(document).ready(function(){
               status = true;
           }
     })
+
+    $("#spin_form").on("submit", function(){
+      var status = false;
+      var spinAmount = $("#spin_amount");
+
+      if(spinAmount.val() == "" || spinAmount.val() < 20){
+        spinAmount.addClass("border-danger");
+        $("#spin_error").html("<span class='text-danger'>Please enter your amount, it should be a minimum of Ksh 20</span>");
+        status = false;
+      }else{
+        spinAmount.removeClass("border-danger");
+        $("#spin_error").html("");
+        status = true;
+      }
+    })
 })
