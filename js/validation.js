@@ -293,4 +293,20 @@ $(document).ready(function(){
         status = true;
       }
     })
+
+    $("#forgotPassword_form").on("submit", function(){
+      var status = false;
+      var forgotEmail = $("#emailAddress");
+      var email_pattern = new RegExp(/^[a-z0-9_-]+(\.[a-z0-9_-]+)*@[a-z0-9_-]+(\.[a-z0-9_-]+)*(\.[a-z]{2,4})$/);
+
+      if(!email_pattern.test(forgotEmail.val())){
+        forgotEmail.addClass("border-danger");
+        $("#emailAddress_error").html("<span class='text-danger'>Please enter a valid email address</span>");
+        status = false;
+      }else{
+        forgotEmail.removeClass("border-danger");
+        $("#emailAddress_error").html("");
+        status = true;
+      }
+    })
 })
