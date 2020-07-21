@@ -120,7 +120,7 @@
                 </ul>
             </div>
             </li>
-            <li><a class="collapsible-header waves-effect arrow-r" style="color: #139eb4;"><i class="fas fa-hand-pointer"></i> ANALYTICS<i
+            <li><a class="collapsible-header waves-effect arrow-r" style="color: #139eb4;"><i class="fas fa-hand-pointer"></i> ACCOUNTS<i
                 class="fas fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul class="list-unstyled">
@@ -130,7 +130,7 @@
                 </li>
                 <li><a href="earnings.html" class="waves-effect" style="color: #139eb4;">Earnings</a>
                 </li>
-                <li><a href="payments.html" class="waves-effect" style="color: #139eb4;">Payments</a>
+                <li><a href="payments.html" class="waves-effect" style="color: #139eb4;">Earnings History</a>
                 </li>
                 </ul>
             </div>
@@ -255,7 +255,7 @@
                     </tr>
                 </table>
                 <br />
-                <img id="spin_button" src="images/spin_off.png" alt="Spin" onClick="startSpin();" />
+                <img id="spin_button" src="images/spin_off.png" alt="Spin" onClick="calculatePrize(); this.disabled=true" />
                 <br /><br />
                 &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
             </div>
@@ -308,7 +308,7 @@
                {'fillStyle' : '#7de6ef', 'text' : 'Ksh 10'},
                {'fillStyle' : '#e7706f', 'text' : 'Ksh 300'},
                {'fillStyle' : '#eae56f', 'text' : 'Ksh 0'},
-               {'fillStyle' : '#89f26e', 'text' : 'Ksh 100'},
+               {'fillStyle' : '#89f26e', 'text' : 'Ksh 5'},
                {'fillStyle' : '#7de6ef', 'text' : 'Ksh 50'},
                {'fillStyle' : '#e7706f', 'text' : 'Ksh 500'},
                {'fillStyle' : '#eae56f', 'text' : 'Ksh 20'},
@@ -332,6 +332,21 @@
         // Vars used by the code in this page to do power controls.
         let wheelPower    = 0;
         let wheelSpinning = false;
+
+                // Function with formula to work out stopAngle before spinning animation.
+        // Called from Click of the Spin button.
+        function calculatePrize()
+        {
+        // This formula always makes the wheel stop somewhere inside prize 3 at least
+        // 1 degree away from the start and end edges of the segment.
+        let stopAt = (91 + Math.floor((Math.random() * 43)))
+ 
+        // Important thing is to set the stopAngle of the animation before stating the spin.
+        theWheel.animation.stopAngle = stopAt;
+ 
+        // May as well start the spin from here.
+        theWheel.startAnimation();
+        }
 
         // -------------------------------------------------------
         // Function to handle the onClick on the power buttons.

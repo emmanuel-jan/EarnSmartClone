@@ -37,7 +37,7 @@
                 </ul>
             </div>
             </li>
-            <li><a class="collapsible-header waves-effect arrow-r" style="color: #139eb4;"><i class="fas fa-hand-pointer"></i> ANALYTICS<i
+            <li><a class="collapsible-header waves-effect arrow-r" style="color: #139eb4;"><i class="fas fa-hand-pointer"></i> ACCOUNTS<i
                 class="fas fa-angle-down rotate-icon"></i></a>
             <div class="collapsible-body">
                 <ul class="list-unstyled">
@@ -47,7 +47,7 @@
                 </li>
                 <li><a href="earnings.html" class="waves-effect" style="color: #139eb4;">Earnings</a>
                 </li>
-                <li><a href="payments.html" class="waves-effect" style="color: #139eb4;">Payments</a>
+                <li><a href="payments.html" class="waves-effect" style="color: #139eb4;">Earnings History</a>
                 </li>
                 </ul>
             </div>
@@ -192,11 +192,18 @@ background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
         <div class="form-row">
             <div class="form-group col-md-6"> 
             <label class="ml-1" style="color: #139eb4;">REFERAL LINK</label>
-            <input type="text" id="copyTarget" value="https://www.earnsmart.co.ke/signup.php?aff=Bonareri" class="form-control" id="link">
+            <input type="text" name="referral_link" id="copyTarget" value="https://www.earnsmart.co.ke/signup.php?aff=Bonareri" class="form-control" id="link">
             </div>
         </div>
         <button id="copyButton" class="btn btn-warning d-inline mr-5">Copy</button>
-        <button type="submit" class="btn btn-info d-inline">Share</button>
+            <a class="btn-floating d-inline" href= "whatsapp://send?text=https://www.earnsmart.co.ke/signup.php?aff=Bonareri"
+                data-action="share/whatsapp/share"
+                target="_blank"> 
+                <img src="images/whatsapp.png" height="40" width="40" alt="whatsapp-icon">
+            </a>
+            <a class="btn-floating d-inline" href="https://www.facebook.com/sharer/sharer.php?u=https://www.earnsmart.co.ke/signup.php?aff=Bonareri" target="_blank">
+                <img src="images/facebook.png" height="40" width="40" alt="fb-icon">
+            </a>
       </form>
 </div>
 
