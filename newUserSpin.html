@@ -255,9 +255,9 @@
                     </tr>
                 </table>
                 <br />
-                <img id="spin_button" src="images/spin_off.png" alt="Spin" onClick="calculatePrize(); this.disabled=true" />
+                <button id="spin_button" onClick="calculatePrize(); this.disabled=true">SPIN</button>
                 <br /><br />
-                &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset)
+                <!-- &nbsp;&nbsp;<a href="#" onClick="resetWheel(); return false;">Play Again</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(reset) -->
             </div>
         </div>
         <div class="col-md-9 col-sm-12 col-xs-12">
@@ -347,6 +347,10 @@
         // May as well start the spin from here.
         theWheel.startAnimation();
         }
+
+        $("#spin_button").on("click", function(){
+            $(this).disable();
+        });
 
         // -------------------------------------------------------
         // Function to handle the onClick on the power buttons.
