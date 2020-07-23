@@ -15,9 +15,9 @@
     <main>
         <div class="container mt-5 mb-5" >
             <div class="row">
-                <div class="col-md-6 offset-md-3 rounded text-white-50" style="background-color: #ff4e00;
-                background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
-                ">
+                <div class="col-md-6 offset-md-3 rounded text-dark" style=" background-image: url('images/registar2.svg');
+                background-position: center;
+                background-repeat: no-repeat;">
                     <p class="h3 text-center mb-3 mt-5">Register to access our ebooks and earn money online</p>
                     <form class="ml-2 mr-2" id="register_form" onsubmit="return false" autocomplete="off">
                         <div class="form-group">
@@ -41,7 +41,7 @@
                             <small id="email_error" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
-                        <label>Country</label>
+                        <label class="text-white">Country</label>
                         <select id="country" class="form-control">
                             <option value=""> Please Choose Your Country</option>
                             <option>Kenya</option>
@@ -51,17 +51,17 @@
                         <small id="country_error" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
-                            <label>Enter Password</label>
+                            <label class="text-white">Enter Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Password">
                             <small id="password_error" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
-                            <label>Confirm Password</label>
+                            <label class="text-white">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
                             <small id="confirmpassword_error" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
-                            <label>Package</label>
+                            <label class="text-white">Package</label>
                             <select id="package" class="form-control">
                                 <option value="">Please Your Package</option>
                                 <option>GOLD PACKAGE : cost - Kes 500</option>
@@ -69,7 +69,7 @@
                             <small id="package_error" class="form-text text-muted"></small>
                         </div>
                         <div class="form-group">
-                            <label>Refered By</label>
+                            <label class="text-white">Refered By</label>
                             <input type="text" class="form-control" id="refered" placeholder="">
                             <small id="refered_error" class="form-text text-muted"></small>
                         </div>
@@ -77,16 +77,16 @@
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" id="agreement">
                               <label class="form-check-label">
-                                I agree to the <a href="#" style="color: #455A64;">Terms of Service</a>
+                                I agree to the <a href="#" class="text-primary">Terms of Service</a>
                               </label>
                               <small id="agreement_error" class="form-text text-muted"></small>
                             </div>
                           </div>
-                          <p class="text-primary"><a href="#" style="color: #455A64;">Read our FAQ here</a></p>
+                          <p class="text-primary"><a href="#">Read our FAQ here</a></p>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
-                    <p class="text-center text-white-50">Have an account already?<a href="login.html" style="color: #455A64;">Login now</a></p>
-                    <p class="text-center"><a href="forgotPassword.html" style="color: #455A64;">Forgot Password ?</a></p>
+                    <p class="text-center text-dark">Have an account already?<a href="login.html" class="text-primary">Login now</a></p>
+                    <p class="text-center"><a href="forgotPassword.html" class="text-primary">Forgot Password ?</a></p>
                 </div>
             </div>
         </div>
